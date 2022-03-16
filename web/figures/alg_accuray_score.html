@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Method');
+        data.addColumn('number', 'Accuracy Score');
+        data.addRows([
+          ['LR',  { v: 60.35, f: '60.35%'}],
+          ['Decision Tree',   {v: 82.43, f: '82.43%'}],
+          ['KNN',  {v: 74.75, f: '74.75%'}],
+          ['Naive Bayes', { v: 41.56, f: '41.56%'}],
+          ['SVM',   { v: 61.99, f: '61.99%'}],
+          ['Random Forest',  { v: 85.09, f: '85.09%'}]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        }
+    </script>
+  </head>
+  <body>
+    <div id="table_div"></div>
+  </body>
+</html>

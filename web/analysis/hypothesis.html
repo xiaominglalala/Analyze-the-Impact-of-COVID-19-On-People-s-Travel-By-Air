@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+    <head>
+        <title>COSC-587: Segementation Fault</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:300,400,700%7CPoppins:300,400,500,700,900" />
+        <link rel="stylesheet" href="../css/bootstrap.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+        <style>
+            .ie-panel {
+                display: none;
+                background: #212121;
+                padding: 10px 0;
+                box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
+                clear: both;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            html.ie-10 .ie-panel,
+            html.lt-ie-10 .ie-panel {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="ie-panel">
+            <a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
+        </div>
+        <div class="preloader">
+            <div class="preloader-body">
+                <div class="cssload-container">
+                    <div class="cssload-speeding-wheel"></div>
+                </div>
+                <p>Loading...</p>
+            </div>
+        </div>
+        <div class="page">
+            <header class="section page-header">
+                <!--RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                        <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse">
+                            <span></span>
+                        </div>
+                        <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
+                            <div class="rd-navbar-aside">
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-zleft"><span class="icon text-middle bi-book-half"></span></div>
+                                            <div class="unit-body"><a href="https://georgetown.instructure.com/courses/132794">COSC-587: Introduction to Data Analytics</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="https://coreja.com" target="_Blank">Rui Chen</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yl1381@georgetown.edu" target="_Blank">Yutai Li</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yw850@georgetown.edu" target="_Blank">Yuming Wang</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:bz176@georgetown.edu" target="_Blank">Boning Zhang</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rd-navbar-main-outer">
+                            <div class="rd-navbar-main">
+                                <!--RD Navbar Panel-->
+                                <div class="rd-navbar-panel">
+                                    <div class="rd-navbar-main-element">
+                                        <div class="rd-nav-item"><a class="rd-nav-link" href="../index.html">Segmentation Fault</a></div>
+                                    </div>
+                                </div>
+                                <div class="rd-navbar-main-element">
+                                    <div class="rd-navbar-nav-wrap">
+                                        <ul class="rd-navbar-nav">
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../index.html">Intro</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../data.html">Data</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../preprocess.html">Preprocess</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../analysis.html">Analysis</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../conclusion.html">Conclusion</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../future.html">Future</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <!--Main section-->
+            <section class="section section-intro context-dark">
+                <div class="intro-bg" style="background: url(../images/intro-bg-2.jpg) no-repeat; background-size: cover; background-position: top center"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 text-center">
+                            <h1 class="font-weight-bold wow fadeInLeft">4.6 Hypothesis</h1>
+                            <p class="intro-description wow fadeInRight"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Base typography -->
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h2 id="51-hypothesis1-decision-tree">4.6.1 Hypothesis1 (Decision Tree)</h2>
+
+                            <svg class="quote-primary-mark" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="15px" viewBox="0 0 21 15" overflow="scroll" xml:space="preserve" preserveAspectRatio="none">
+                                <path d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
+                            </svg>
+                            <p>
+                                <strong><em>Although the number of flights per day is generally on the rise. But people&#39;s willingness to travel is still affected by the number of new cases and deaths each day.</em></strong>
+                            </p>
+                            <p>We used decision tree to test since we want to prove that there is a relationship between the daily new cases and deaths and people&#39;s willingness to take plane. The hypothesis assumes that the daily new cases and new deaths would influence people&#39;s willingness, but we don&#39;t know how it works, so we choose to use decision tree classifier here. (With both opensky and CDC data set).</p>
+                            <p>We preprocess the data by reducing the outliers, fill the missing value with the mean or median. And since both data set is time series, we have to make sure the data we used for this hypothesis test should in the same time range. So we choose the data based on the CDC data set. When there are both records for today and tomorrow in opensky data sets, choose this CDC records and store the group id.</p>
+                            <p>As for how we divided those data into groups</p>
+                            <ul class="list-marked">
+                                <li>When the flights number is decrease by tomorrow, mark it as &#39;-1&#39;,</li>
+                                <li>When flights number is increase by tomorrow, mark it as &#39;1&#39; (If remain the same, mark it as &#39;0&#39;, which is impossible in our data set, so there are two groups in total.)</li>
+                            </ul>
+                            <p>Here is the reports generated by the provided methods:</p>
+                            <p><img src="../figures/opensky_CDC_decisionTree.png" referrerpolicy="no-referrer" /></p>
+                            <p>As we can see here, the sorce generated by those method tells us there do have a relation between people&#39;s mind about taking flights and daily new cases and deaths. However, those outputs also donate that the relation is so weak that only a small part of people would consider about the daily new cases and deaths when they are going to take plane.</p>
+                            <p>So, our data do support this hypothesis, but the relationship between them is not completely assured.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h2 id="53-hypothesis-3-t-test">4.6.2 Hypothesis 2 (T-Test)</h2>
+                            <p>As for t-test, we need to set a null hypothesis and set the significance standard alpha which will measure if the result meets the hypothesis or not.</p>
+                            <p>Then we need to calculate the statistical values t(which measures if the average of a sample is quite different from the average of all) and we can get p_value by looking up in the table to compare p_value and the significance standard alpha</p>
+
+                            <svg class="quote-primary-mark" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="15px" viewBox="0 0 21 15" overflow="scroll" xml:space="preserve" preserveAspectRatio="none">
+                                <path d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
+                            </svg>
+                            <p>
+                                <em><strong>The average conf_cases in all states are 30,000.</strong></em>
+                            </p>
+
+                            <p>This hypothesis mainly focus on the difference of the number of confirmed COVID-19 cases between states in America, because people have to know if different states have different panic situation to make sure if it is safe to take flights.</p>
+                            <p>here is the result (p_value &lt; significance alpha)</p>
+                            <img src="../figures/ttest.png" referrerpolicy="no-referrer" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h2 id="54-hypothesis-4-anova-test">4.6.3 Hypothesis 3 (Anova test)</h2>
+                            <p>As for anova test, we need to set a null hypothesis and set the significance standard alpha which will measure if the result meets the hypothesis or not.</p>
+                            <p>Then we need to calculate the statistical values ssb(difference between groups) and ssw(difference within group) and we can get f_value by calling statistic function to compare f_value and the significance standard alpha</p>
+
+                            <svg class="quote-primary-mark" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="21px" height="15px" viewBox="0 0 21 15" overflow="scroll" xml:space="preserve" preserveAspectRatio="none">
+                                <path d="M9.597,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.349,1.316 c-1.287,0-2.414-0.44-3.382-1.316C0.482,12.811,0,11.758,0,10.535c0-1.226,0.58-2.716,1.739-4.473L5.603,0H9.34L6.956,6.37 C8.716,7.145,9.597,8.493,9.597,10.412z M20.987,10.412c0,1.306-0.473,2.399-1.418,3.277c-0.944,0.876-2.06,1.316-3.35,1.316 c-1.288,0-2.415-0.44-3.381-1.316c-0.966-0.879-1.45-1.931-1.45-3.154c0-1.226,0.582-2.716,1.74-4.473L16.994,0h3.734l-2.382,6.37 C20.106,7.145,20.987,8.493,20.987,10.412z"></path>
+                            </svg>
+                            <p>
+                                <em><strong>There is no significant difference between covid-19 cases(including conf_cases, prob_cases).</strong></em>
+                            </p>
+                            <p>This hypothesis mainly focus on the difference between confirmed COVID-19 cases and probable COVID-19 cases in America.</p>
+                            <p>here is the result (f_value &lt; significance alpha)</p>
+                            <img src="../figures/anova.png" referrerpolicy="no-referrer" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="section footer-classic section-sm">
+                <div class="container">
+                    <div class="row row-30">
+                        <div class="col-lg-4 wow fadeInLeft">
+                            <p class="footer-classic-title">COSC - 587</p>
+                            <p class="footer-classic-subscribe-form">Group: Segentation Fault</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">group memebers</p>
+                            <ul>
+                                <li>Rui Chen: <a class="d-inline-block accent-link" href="mailto:rc1488@georgetown.edu">rc1488@georgetown.edu</a></li>
+                                <li>Yutai Li: <a class="d-inline-block accent-link" href="mailto:yl1381@georgetown.edu">yl1381@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">&nbsp;</p>
+                            <ul>
+                                <li>Yuming Wang: <a class="d-inline-block accent-link" href="mailto:yw850@georgetown.edu">yw850@georgetown.edu</a></li>
+                                <li>Boning Zhang: <a class="d-inline-block accent-link" href="mailto:bz176@georgetown.edu">bz176@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container wow fadeInUp" data-wow-delay=".4s">
+                    <div class="footer-classic-aside">
+                        <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://coreja.com">Rui Chen</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="snackbars" id="form-output-global"></div>
+        <script src="../js/core.min.js"></script>
+        <script src="../js/script.js"></script>
+        <!--coded by Drel-->
+    </body>
+</html>

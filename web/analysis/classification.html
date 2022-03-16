@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+    <head>
+        <title>COSC-587: Segementation Fault</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:300,400,700%7CPoppins:300,400,500,700,900" />
+        <link rel="stylesheet" href="../css/bootstrap.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+        <style>
+            .ie-panel {
+                display: none;
+                background: #212121;
+                padding: 10px 0;
+                box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
+                clear: both;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            html.ie-10 .ie-panel,
+            html.lt-ie-10 .ie-panel {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="ie-panel">
+            <a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
+        </div>
+        <div class="preloader">
+            <div class="preloader-body">
+                <div class="cssload-container">
+                    <div class="cssload-speeding-wheel"></div>
+                </div>
+                <p>Loading...</p>
+            </div>
+        </div>
+        <div class="page">
+            <header class="section page-header">
+                <!--RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                        <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse">
+                            <span></span>
+                        </div>
+                        <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
+                            <div class="rd-navbar-aside">
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-zleft"><span class="icon text-middle bi-book-half"></span></div>
+                                            <div class="unit-body"><a href="https://georgetown.instructure.com/courses/132794">COSC-587: Introduction to Data Analytics</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="https://coreja.com" target="_Blank">Rui Chen</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yl1381@georgetown.edu" target="_Blank">Yutai Li</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yw850@georgetown.edu" target="_Blank">Yuming Wang</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:bz176@georgetown.edu" target="_Blank">Boning Zhang</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rd-navbar-main-outer">
+                            <div class="rd-navbar-main">
+                                <!--RD Navbar Panel-->
+                                <div class="rd-navbar-panel">
+                                    <div class="rd-navbar-main-element">
+                                        <div class="rd-nav-item"><a class="rd-nav-link" href="../index.html">Segmentation Fault</a></div>
+                                    </div>
+                                </div>
+                                <div class="rd-navbar-main-element">
+                                    <div class="rd-navbar-nav-wrap">
+                                        <ul class="rd-navbar-nav">
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../index.html">Intro</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../data.html">Data</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../preprocess.html">Preprocess</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../analysis.html">Analysis</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../conclusion.html">Conclusion</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../future.html">Future</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <!--Main section-->
+            <section class="section section-intro context-dark">
+                <div class="intro-bg" style="background: url(../images/intro-bg-2.jpg) no-repeat; background-size: cover; background-position: top center"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 text-center">
+                            <h1 class="font-weight-bold wow fadeInLeft">4.7 Classification</h1>
+                            <p class="intro-description wow fadeInRight">We did classification tests on our CDC dataset.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Base typography -->
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <p><strong>There are some more information that wasn&#39;t shown directly on data. For example, death rate in CDC Covid-19 dataset. In this part we labeled death rate on CDC dataset and tried all 6 classifiers to classify data by death rate, in order to figure out how well they each did on this classification task.</strong></p>
+                            <p>We evaluate their performances by <code>accuracy_score</code>, <code>classification report</code>(include <code>precision</code>, <code>f1-score</code>, <code>macro avg</code>, <code>weighted avg</code> for each class.)</p>
+                            <p>We also plot <code>ROC curve</code> and <code>aur_score</code> for each classifier. As we know <code>sk-learn</code> only supports <code>ROC curve</code> for binary classifier. It&#39;s typical to draw a <code>ROC curve</code> by each class. So we will transform the result data into a binary one for each class, and then draw them on the plot by class. Check them down below.</p>
+                            <h3 id="551-how-is-data-pre-processed-and-split">5.5.1 How is data pre-processed and split</h3>
+                            <p>We first dealt with the missing and error in the data based on the analysis of Proj2. After that, we use tot_death and tot_cases in the processed data to divide and calculate the corresponding death_rate. This variable can be understood as the proportion of deaths in all cases.</p>
+                            <p>Next, according to the value of death_rate, we perform labeling for later classification. Mark the top 25% part of death_rate in the data as type &#39;2&#39;, which represents high mortality; mark the 25%~75% part of death_rate in the data as type &#39;1&#39;, which represents medium mortality; mark death_rate in the data The last 25% of the part is marked as type &#39;0&#39;, which represents low mortality.</p>
+                            <p>The figure below shows the Data summary, including the 25% point and 75% of death rate:</p>
+                            <p><img src="../figures/Data summary.png" referrerpolicy="no-referrer" /></p>
+                            <h3 id="552-logistical-regression">5.5.2 Logistical Regression</h3>
+                            <p>Here is the accuracy rate, confusion matrix and reports generated by Logistical Regression:</p>
+                            <p><img src="../figures/LR result.png" referrerpolicy="no-referrer" /></p>
+                            <p>The ROC curve is:</p>
+                            <p><img src="../figures/LR ROC.png" referrerpolicy="no-referrer" /></p>
+                            <h3 id="553-decision-tree">5.5.3 Decision Tree</h3>
+                            <p>Here is the accuracy rate, confusion matrix and reports generated by Decision Tree:</p>
+                            <p><img src="../figures/Decision Tree result.png" referrerpolicy="no-referrer" /></p>
+                            <p>The ROC curve is:</p>
+                            <p><img src="../figures/DT ROC.png" referrerpolicy="no-referrer" /></p>
+                            <h3 id="554--knn">5.5.4 kNN</h3>
+                            <p>Here is the accuracy rate, confusion matrix and reports generated by kNN:</p>
+                            <p><img src="../figures/KNN result.png" referrerpolicy="no-referrer" /></p>
+                            <p>The ROC curve is:</p>
+                            <p><img src="../figures/kNN ROC.png" referrerpolicy="no-referrer" /></p>
+                            <h3 id="555-naive-bayes">5.5.5 Naive Bayes</h3>
+                            <p>Here is the accuracy rate, confusion matrix and reports generated by Naive Bayes:</p>
+                            <p><img src="../figures/NB result.png" referrerpolicy="no-referrer" /></p>
+                            <p>The ROC curve is:</p>
+                            <p><img src="../figures/NB ROC.png" referrerpolicy="no-referrer" /></p>
+                            <h3 id="556-svm">5.5.6 SVM</h3>
+                            <p>For the classification task done by SVM, well the result wasn&#39;t satisfied and it took more than the sum of all other 5 methods to finish. We used our training dataset to train this model and use validation dataset to test its performance. I tried all 3 SVM models, which are <code>svc</code>, <code>NuSVC</code> and <code>LinearSVC</code>. <code>SVC</code> did best so the result is performed by <code>svc</code> here.</p>
+                            <p>We also used cross validation to train this model, still not so good.</p>
+                            <p><img src="../figures/SVM result.png" referrerpolicy="no-referrer" /></p>
+                            <p>The ROC curve is:</p>
+                            <p><img src="../figures/SVM ROC.png" referrerpolicy="no-referrer" /></p>
+                            <h3 id="557-random-forest">5.5.7 Random Forest</h3>
+                            <p>For the classification task done by random forest, it did really good. We used our training dataset to train this model and use validation dataset to test its performance.</p>
+                            <p><img src="../figures/random forest result.png" referrerpolicy="no-referrer" /></p>
+                            <p>The <code>ROC curve</code> for random forest is also quite good-looking. It shows strong relation for each type.</p>
+                            <p><img src="../figures/random forest ROC.png" referrerpolicy="no-referrer" /></p>
+                            <h3 id="558-overall-comparison">5.5.8 Overall comparison</h3>
+                            <p>Here is the comparison of all six algorithm:</p>
+                            <p><img src="../figures/Algorithm Comparsion.png" referrerpolicy="no-referrer" /></p>
+
+                            <div id="alg_accuray_score" style="height: 600px"></div>
+                            <script>
+                                document.getElementById("alg_accuray_score").innerHTML = '<object type="text/html" data="../figures/alg_accuray_score.html" width="100%" height="100%"></object>';
+                            </script>
+
+                            <p>Note that our labels are formed by calculation of a few columns. So from all these 6 classification accuracy result we can learn that:</p>
+                            <ul>
+                                <li><code>Random Forest</code> and <code>Decision Tree</code> did best in our classification task</li>
+                                <li><code>Naive Bayes</code> did worst in our classification task</li>
+                                <li>It implies that <code>Naive Bayes</code> might not detect much division relationship, while <code>Random Forest</code> and <code>Decision Tree</code> does.</li>
+                                <li><code>kNN</code> is in the upper middle.</li>
+                                <li><code>SVM</code> and <code>Logistical Regression</code> are not quite good as the best. But they did not too bad. However they cost most of the time.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12"></div>
+                    </div>
+                </div>
+            </section>
+            <footer class="section footer-classic section-sm">
+                <div class="container">
+                    <div class="row row-30">
+                        <div class="col-lg-4 wow fadeInLeft">
+                            <p class="footer-classic-title">COSC - 587</p>
+                            <p class="footer-classic-subscribe-form">Group: Segentation Fault</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">group memebers</p>
+                            <ul>
+                                <li>Rui Chen: <a class="d-inline-block accent-link" href="mailto:rc1488@georgetown.edu">rc1488@georgetown.edu</a></li>
+                                <li>Yutai Li: <a class="d-inline-block accent-link" href="mailto:yl1381@georgetown.edu">yl1381@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">&nbsp;</p>
+                            <ul>
+                                <li>Yuming Wang: <a class="d-inline-block accent-link" href="mailto:yw850@georgetown.edu">yw850@georgetown.edu</a></li>
+                                <li>Boning Zhang: <a class="d-inline-block accent-link" href="mailto:bz176@georgetown.edu">bz176@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container wow fadeInUp" data-wow-delay=".4s">
+                    <div class="footer-classic-aside">
+                        <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://coreja.com">Rui Chen</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="snackbars" id="form-output-global"></div>
+        <script src="../js/core.min.js"></script>
+        <script src="../js/script.js"></script>
+        <!--coded by Drel-->
+    </body>
+</html>

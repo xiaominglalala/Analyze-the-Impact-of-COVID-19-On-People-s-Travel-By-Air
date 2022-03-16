@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+    <head>
+        <title>COSC-587: Segementation Fault</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:300,400,700%7CPoppins:300,400,500,700,900" />
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+        <style>
+            .ie-panel {
+                display: none;
+                background: #212121;
+                padding: 10px 0;
+                box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
+                clear: both;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            html.ie-10 .ie-panel,
+            html.lt-ie-10 .ie-panel {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="preloader">
+            <div class="preloader-body">
+                <div class="cssload-container">
+                    <div class="cssload-speeding-wheel"></div>
+                </div>
+                <p>Loading...</p>
+            </div>
+        </div>
+        <div class="page">
+            <header class="section page-header">
+                <!--RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                        <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse">
+                            <span></span>
+                        </div>
+                        <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
+                            <div class="rd-navbar-aside">
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-zleft"><span class="icon text-middle bi-book-half"></span></div>
+                                            <div class="unit-body"><a href="https://georgetown.instructure.com/courses/132794">COSC-587: Introduction to Data Analytics</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="https://coreja.com" target="_Blank">Rui Chen</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yl1381@georgetown.edu" target="_Blank">Yutai Li</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yw850@georgetown.edu" target="_Blank">Yuming Wang</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:bz176@georgetown.edu" target="_Blank">Boning Zhang</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rd-navbar-main-outer">
+                            <div class="rd-navbar-main">
+                                <!--RD Navbar Panel-->
+                                <div class="rd-navbar-panel">
+                                    <div class="rd-navbar-main-element">
+                                        <div class="rd-nav-item"><a class="rd-nav-link" href="index.html">Segmentation Fault</a></div>
+                                    </div>
+                                </div>
+                                <div class="rd-navbar-main-element">
+                                    <div class="rd-navbar-nav-wrap">
+                                        <ul class="rd-navbar-nav">
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Intro</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="data.html">Data</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="preprocess.html">Preprocess</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="analysis.html">Analysis</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="conclusion.html">Conclusion</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="future.html">Future</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <!--Main section-->
+            <section class="section section-intro context-dark">
+                <div class="intro-bg" style="background: url(images/intro-bg-2.jpg) no-repeat; background-size: cover; background-position: top center"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 text-center">
+                            <h1 class="font-weight-bold wow fadeInLeft">Pre-Processing of Data</h1>
+                            <p class="intro-description wow fadeInRight">
+                                We extract <em><strong>8</strong></em> columns from COVID-19 dataset and <em><strong>3</strong></em> columns from flight dataset.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Base typography -->
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50 flex-lg">
+                        <div class="col-xl-12">
+                            <h2 id="31-covid-19-cases-and-death-dataset">3.1 Covid-19 Cases and Death Dataset</h2>
+                            <ul class="list-marked">
+                                <li>
+                                    <p>Handling null values</p>
+                                    <ul class="list-marked">
+                                        <li>For null values, we decided to fill them with mean values. Because we need to make sure there is a relation about the columns, such as tot_cases = conf_cases + prob_cases.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <pre><code class='language-python' lang='python'># handle null value of each column
+data[col].fillna(mean, inplace = True)
+</code></pre>
+                            <ul class="list-marked">
+                                <li>Checking the duplicates</li>
+                            </ul>
+                            <pre><code class='language-python' lang='python'># check duplicate
+print(df[df.duplicated()]) 
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h2 id="32-opensky-airline-dataset">3.2 Opensky Airline dataset</h2>
+                            <ul class="list-marked">
+                                <li>Since we only need the origin, destination, icao24 and date of flights for the current project, delete any records that contain nan values or empty values in above four columns.</li>
+                                <li>Also, for this project, we only need flights that take place in the United States, so we use python crawler to get the aiports and their corresponding states from wiki, so we can identify and delete records that containing airports that are not in the United States.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h2 id="33-scraped-tweets-related-to-covid-and-flight">3.3 Scraped Tweets related to &#39;Covid&#39; and &#39;flight&#39;</h2>
+                            <p>In this part, we need to decide what content of a tweet is not clean. This decision should also made under the consideration of what we need to do with those tweets. After our discussion, we decided to do Sentiment analysis with all these tweets (will be further described in that section).</p>
+                            <p>After reading quite a few scraped tweets, we found out that these 4 kinds of noise should be cleaned.</p>
+                            <ul class="list-marked">
+                                <li>Stopwords</li>
+                                <li>URLs (<a>https://xxx.dd.com/dasdfa</a>)</li>
+                                <li>Hashtags (#sometag)</li>
+                                <li>Mentioned tags (@somebody)</li>
+                            </ul>
+                            <p>The reason for removing stopwords is quite clear, there&#39;s no need analyze the sentiment of stopwords(which usually don&#39;t have emotional meaning afterall). This reason also applies for URLs and Mentioned tag. Whether to remove hashtags is discussed more. We decided to remove it simply because, yes it do have meaning sometimes, but most of the time they only represent some certain objective things(it&#39;s a noun mostly) which don&#39;t tend to have emotional meaning.</p>
+                            <p>We used <code>nltk</code> package to tokenize tweets. We also used it as our stopwords list. In terms of urls and hash tags and mentioned tags, we came up with two regular expressions to find and replace them.</p>
+                            <p>Every tweet is read from csv file named <code>result_covid_flight.csv</code> and then rewrite into a new csv file named <code>result_covid_flight_cleaning.csv</code>. As we collected 470K records and there&#39;s no way to upload it on github, we created a share link on google drive for you to use.</p>
+                            <a class="primary-link" href="https://drive.google.com/file/d/1OA1kkjQ9V0ZXQ-s8MqbLsOXATgK4k-IW/view">https://drive.google.com/file/d/1OA1kkjQ9V0ZXQ-s8MqbLsOXATgK4k-IW/view</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="section footer-classic section-sm">
+                <div class="container">
+                    <div class="row row-30">
+                        <div class="col-lg-4 wow fadeInLeft">
+                            <p class="footer-classic-title">COSC - 587</p>
+                            <p class="footer-classic-subscribe-form">Group: Segentation Fault</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">group memebers</p>
+                            <ul>
+                                <li>Rui Chen: <a class="d-inline-block accent-link" href="mailto:rc1488@georgetown.edu">rc1488@georgetown.edu</a></li>
+                                <li>Yutai Li: <a class="d-inline-block accent-link" href="mailto:yl1381@georgetown.edu">yl1381@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">&nbsp;</p>
+                            <ul>
+                                <li>Yuming Wang: <a class="d-inline-block accent-link" href="mailto:yw850@georgetown.edu">yw850@georgetown.edu</a></li>
+                                <li>Boning Zhang: <a class="d-inline-block accent-link" href="mailto:bz176@georgetown.edu">bz176@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container wow fadeInUp" data-wow-delay=".4s">
+                    <div class="footer-classic-aside">
+                        <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://coreja.com">Rui Chen</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="snackbars" id="form-output-global"></div>
+        <script src="js/core.min.js"></script>
+        <script src="js/script.js"></script>
+        <!--coded by Drel-->
+    </body>
+</html>

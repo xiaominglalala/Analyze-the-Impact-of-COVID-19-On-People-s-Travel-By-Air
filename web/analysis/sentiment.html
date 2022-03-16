@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+    <head>
+        <title>COSC-587: Segementation Fault</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:300,400,700%7CPoppins:300,400,500,700,900" />
+        <link rel="stylesheet" href="../css/bootstrap.css" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+        <style>
+            .ie-panel {
+                display: none;
+                background: #212121;
+                padding: 10px 0;
+                box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
+                clear: both;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            html.ie-10 .ie-panel,
+            html.lt-ie-10 .ie-panel {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="ie-panel">
+            <a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
+        </div>
+        <div class="preloader">
+            <div class="preloader-body">
+                <div class="cssload-container">
+                    <div class="cssload-speeding-wheel"></div>
+                </div>
+                <p>Loading...</p>
+            </div>
+        </div>
+        <div class="page">
+            <header class="section page-header">
+                <!--RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                        <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse">
+                            <span></span>
+                        </div>
+                        <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
+                            <div class="rd-navbar-aside">
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-zleft"><span class="icon text-middle bi-book-half"></span></div>
+                                            <div class="unit-body"><a href="https://georgetown.instructure.com/courses/132794">COSC-587: Introduction to Data Analytics</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="https://coreja.com" target="_Blank">Rui Chen</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yl1381@georgetown.edu" target="_Blank">Yutai Li</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yw850@georgetown.edu" target="_Blank">Yuming Wang</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:bz176@georgetown.edu" target="_Blank">Boning Zhang</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rd-navbar-main-outer">
+                            <div class="rd-navbar-main">
+                                <!--RD Navbar Panel-->
+                                <div class="rd-navbar-panel">
+                                    <div class="rd-navbar-main-element">
+                                        <div class="rd-nav-item"><a class="rd-nav-link" href="../index.html">Segmentation Fault</a></div>
+                                    </div>
+                                </div>
+                                <div class="rd-navbar-main-element">
+                                    <div class="rd-navbar-nav-wrap">
+                                        <ul class="rd-navbar-nav">
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../index.html">Intro</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../data.html">Data</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../preprocess.html">Preprocess</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../analysis.html">Analysis</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../conclusion.html">Conclusion</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="../future.html">Future</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <!--Main section-->
+            <section class="section section-intro context-dark">
+                <div class="intro-bg" style="background: url(../images/intro-bg-2.jpg) no-repeat; background-size: cover; background-position: top center"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 text-center">
+                            <h1 class="font-weight-bold wow fadeInLeft">4.5 Sentiment Analysis</h1>
+                            <p class="intro-description wow fadeInRight">Sentiment Analysis via Scraped Tweets.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Base typography -->
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <p>We chose Sentiment Analysis because of two reasons.</p>
+                            <ol class="list-ordered">
+                                <li>Tweets are too short to use topic modeling. In Professor Lisa&#39;s lecture, we saw how bad it cloud become, there won&#39;t be any good result of topics to show. More importantly, we don&#39;t want the topic of it! These data are collected because they are related to <code>covid-19</code> and <code>flight</code>. That&#39;s already our topics!</li>
+                                <li>We do want to analyze how people feel about <code>covid-19</code> when <code>travel through air</code>. Perhaps sentiment analysis won&#39;t tell exactly how but that&#39;s the way on it.</li>
+                            </ol>
+                            <p>To be more specific, why we want to find sentiment of tweets? First, we want to know how people feel when they are traveling by plane under the pandemic of Covid-19, that is, does people feel positive more or negative more under such circumstances. Second, we want to know the sentiment through out the timelines. When does people feel negative more?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h3 id="451-sentiment-grading">4.5.1 Sentiment Grading</h3>
+                            <p>We use <code>vaderSentiment</code> package to do grading. This is a great package based on lexicon method. It does not only contains emotional vocabulary, but also has a lot <code>emoji</code> and <code>emoticon</code>. We use it to calculate the sentiment for each tweet.</p>
+                            <p>The result for this part is also too large to upload. It extract the content in <code>result_covid_flight_cleaning.csv</code> (which is also generated in <code>Tweets cleaning</code> section) and generate results in a new csv file named <code>result_covid_flight_cleaning_sentiment.csv</code>.</p>
+                            <p>For more details please check it in our code file <code>TweetsSentiment.py</code></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h3 id="452-sentiment-labeling-and-accuracy">4.5.2 Sentiment Labeling and Accuracy</h3>
+                            <p>For this part we manually add tags by determining the sentiment for a tweets. It included 2 parts here.</p>
+                            <p>First we need to sample a few tweets. Here we extracted 50 tweets randomly from <code>result_covid_flight_cleaning.csv</code>. And we manually labeled each of these 50 tweets. Sometimes it&#39;s really hard to determine it is positive, negative or neutral even for human beings like us. We wrote a small script named <code>TweetsTagging.py</code> for this task and it will generate a tagged file named <code>result_covid_flight_cleaning_tag.csv</code> (and it is uploaded on github).</p>
+                            <p>Second we want to compare it to the sentiment grading done by <code>vaderSentiment</code>. In the code <code>TweetsSentimentAccuracy.py</code>, we calculated the sentiment of each tweet and compared it with our manually labels. It will generate the result in a file named <code>TweetsSentimentAccuracyResult.txt</code>.</p>
+                            <img src="../figures/Tweets_sentiment_accuracy.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section-lg bg-default">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h3 id="453-sentiment-analysis">4.5.3 Sentiment Analysis</h3>
+                            <p>For this part we want to analyze some result by grading sentiment for each tweets. We summarized the total amount of tweets in each month by their sentiment. The result (<code>TweetsSentimentAnalysisResult.txt</code>) is generated by code file named <code>TweetsSentimentAnalysis.py</code>and it looks like this:</p>
+                            <img src="../figures/Tweets_sentiment_numbers.png" alt="" />
+                            <img src="../figures/Tweets_sentiment_percentage.png" alt="" />
+
+                            <p>Judging by the result we may conclude that:</p>
+                            <ul class="list-marked">
+                                <li>Positive tweets are apparently more than negative tweets in the beginning months that COVID-19 pandemic just started. People using English on twitter are significantly confident overall. We guess that most of them at that time believes that it will all be gone soon.</li>
+                                <li>As time went by, tweets from people tends to be balanced between positive sentiment and negative sentiments. There are some months that negative sentiments are significantly more than positive sentiments.</li>
+                                <li>People talked it more when COVID-19 just began. The tendency of which tends to be lower as time goes by.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="section footer-classic section-sm">
+                <div class="container">
+                    <div class="row row-30">
+                        <div class="col-lg-4 wow fadeInLeft">
+                            <p class="footer-classic-title">COSC - 587</p>
+                            <p class="footer-classic-subscribe-form">Group: Segentation Fault</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">group memebers</p>
+                            <ul>
+                                <li>Rui Chen: <a class="d-inline-block accent-link" href="mailto:rc1488@georgetown.edu">rc1488@georgetown.edu</a></li>
+                                <li>Yutai Li: <a class="d-inline-block accent-link" href="mailto:yl1381@georgetown.edu">yl1381@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">&nbsp;</p>
+                            <ul>
+                                <li>Yuming Wang: <a class="d-inline-block accent-link" href="mailto:yw850@georgetown.edu">yw850@georgetown.edu</a></li>
+                                <li>Boning Zhang: <a class="d-inline-block accent-link" href="mailto:bz176@georgetown.edu">bz176@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container wow fadeInUp" data-wow-delay=".4s">
+                    <div class="footer-classic-aside">
+                        <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://coreja.com">Rui Chen</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="snackbars" id="form-output-global"></div>
+        <script src="../js/core.min.js"></script>
+        <script src="../js/script.js"></script>
+        <!--coded by Drel-->
+    </body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+    <head>
+        <title>Data - Segementation Fault</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:300,400,700%7CPoppins:300,400,500,700,900" />
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/fonts.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+        <style>
+            .ie-panel {
+                display: none;
+                background: #212121;
+                padding: 10px 0;
+                box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
+                clear: both;
+                text-align: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            html.ie-10 .ie-panel,
+            html.lt-ie-10 .ie-panel {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="preloader">
+            <div class="preloader-body">
+                <div class="cssload-container">
+                    <div class="cssload-speeding-wheel"></div>
+                </div>
+                <p>Loading...</p>
+            </div>
+        </div>
+        <div class="page">
+            <header class="section page-header">
+                <!--RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar rd-navbar-classic" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+                        <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse">
+                            <span></span>
+                        </div>
+                        <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark">
+                            <div class="rd-navbar-aside">
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-zleft"><span class="icon text-middle bi-book-half"></span></div>
+                                            <div class="unit-body"><a href="https://georgetown.instructure.com/courses/132794">COSC-587: Introduction to Data Analytics</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="https://coreja.com" target="_Blank">Rui Chen</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yl1381@georgetown.edu" target="_Blank">Yutai Li</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:yw850@georgetown.edu" target="_Blank">Yuming Wang</a></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="unit unit-spacing-xs align-items-center">
+                                            <div class="unit-left"><span class=""></span></div>
+                                            <div class="unit-body"><a href="mailto:bz176@georgetown.edu" target="_Blank">Boning Zhang</a></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="rd-navbar-main-outer">
+                            <div class="rd-navbar-main">
+                                <!--RD Navbar Panel-->
+                                <div class="rd-navbar-panel">
+                                    <div class="rd-navbar-main-element">
+                                        <div class="rd-nav-item"><a class="rd-nav-link" href="index.html">Segmentation Fault</a></div>
+                                    </div>
+                                </div>
+                                <div class="rd-navbar-main-element">
+                                    <div class="rd-navbar-nav-wrap">
+                                        <ul class="rd-navbar-nav">
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="index.html">Intro</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="data.html">Data</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="preprocess.html">Preprocess</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="analysis.html">Analysis</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="conclusion.html">Conclusion</a></li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="future.html">Future</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <!--Main section-->
+            <section class="section section-intro context-dark">
+                <div class="intro-bg" style="background: url(images/intro-bg-2.jpg) no-repeat; background-size: cover; background-position: top center"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 text-center">
+                            <h1 class="font-weight-bold wow fadeInLeft">Data</h1>
+                            <p class="intro-description wow fadeInRight">
+                                We have collected 3 Datasets from
+                                <a href="#" data-custom-scroll-to="CDC">CDC</a> ,
+                                <a href="#" data-custom-scroll-to="OpenSky">OpenSky</a>
+                                and
+                                <a href="#" data-custom-scroll-to="Twitter">Twitter</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Base typography -->
+            <section class="section section-lg bg-default" id="CDC">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h2 id="21-covid-19-cases-and-death-dataset">2.1 Covid-19 Cases and Death Dataset</h2>
+                            <h3 id="211-overview">2.1.1 Overview</h3>
+                            <p>We use CDC api to collect <a class="primary-link" href="https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36">Covid-19 Cases and Death</a> dataset. We need a APP TOKEN to request their api.</p>
+                            <p>Requested data are in the form of json array. I transform them into CSV data with some adjustments (to make data more easy to look at). Their api has a paging limitation so I can&#39;t just get my data in a simple request. I made a loop to request 5000 records per request, and save them into CSV files.</p>
+                            <h3 id="212-data-sample">2.1.2 Data Sample and Definition</h3>
+                            <figure>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Column Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>submission_date</td>
+                                            <td>Date of counts</td>
+                                        </tr>
+                                        <tr>
+                                            <td>state</td>
+                                            <td>Jurisdiction</td>
+                                        </tr>
+                                        <tr>
+                                            <td>tot_cases</td>
+                                            <td>Total number of cases</td>
+                                        </tr>
+                                        <tr>
+                                            <td>conf_cases</td>
+                                            <td>Total confirmed cases</td>
+                                        </tr>
+                                        <tr>
+                                            <td>prob_cases</td>
+                                            <td>Total probable cases</td>
+                                        </tr>
+                                        <tr>
+                                            <td>new_case</td>
+                                            <td>Number of new cases</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pnew_case</td>
+                                            <td>Number of new probable cases</td>
+                                        </tr>
+                                        <tr>
+                                            <td>tot_death</td>
+                                            <td>Total number of deaths</td>
+                                        </tr>
+                                        <tr>
+                                            <td>conf_death</td>
+                                            <td>Total number of confirmed deaths</td>
+                                        </tr>
+                                        <tr>
+                                            <td>prob_death</td>
+                                            <td>Total number of probable deaths</td>
+                                        </tr>
+                                        <tr>
+                                            <td>new_death</td>
+                                            <td>Number of new deaths</td>
+                                        </tr>
+                                        <tr>
+                                            <td>pnew_death</td>
+                                            <td>Number of new probable deaths</td>
+                                        </tr>
+                                        <tr>
+                                            <td>created_at</td>
+                                            <td>Date and time record was created</td>
+                                        </tr>
+                                        <tr>
+                                            <td>consent_cases</td>
+                                            <td>If Agree, then confirmed and probable cases are included. If Not Agree, then only total cases are included.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>consent_deaths</td>
+                                            <td>If Agree, then confirmed and probable deaths are included. If Not Agree, then only total deaths are included.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </figure>
+                            <p>Please click <a class="primary-link" href="sample_cdc.html">here</a> to view some data sample of this dataset.</p>
+                            <h3 id="213-data-issues">2.1.3 Data Issues</h3>
+                            <ul>
+                                <li><p>Different data types such as float and string may appear in the same column.</p></li>
+                                <li>
+                                    <p>There are a lot of missing values.</p>
+                                    <ul>
+                                        <li>For example, we have the value of &quot;tot_case&quot; for a certain city on a certain day, and this value represents the total number of cases. This value should be equal to the sum of the value of &quot;conf_cases&quot; and the value of &quot;prob_cases&quot;. But the last two values in the data set are often blank, even if they should not be 0. Some data may have a noise value. For example, the value of the number of new infections is -1.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h3 id="214-data-cleanliness">2.1.4 Data Cleanliness</h3>
+                            <p>For the CDC data set, we mainly made the following assessments：</p>
+                            <ul>
+                                <li>Calculate the fraction of missing values for each attribute.</li>
+                                <li>Calculate the fraction of noise values.</li>
+                            </ul>
+                            <p>The percentage of missing values for each attribute:</p>
+                            <p><img src="https://user-images.githubusercontent.com/35549544/143917182-01b4fa0e-b19f-4cbc-8846-009da273236f.PNG" referrerpolicy="no-referrer" alt="Missing Value" /></p>
+                            <p>The fraction of noise values:</p>
+                            <p><img src="https://user-images.githubusercontent.com/35549544/143917244-3216d4da-e829-47ad-92b2-b94c91c5252e.PNG" referrerpolicy="no-referrer" alt="Noise Value" /></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section-lg bg-default" id="OpenSky">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h2 id="22-opensky-airline-dataset">2.2 Opensky Airline dataset</h2>
+                            <h3 id="221-overview">2.2.1 Overview</h3>
+                            <p>We use python crawler to scrape data from <a class="primary-link" href="https://opensky-network.org/">OpenSky</a> for this dataset. Find a website that contain the data we need, pass the url to the method, then the method will iterate all the href in the html text, add it into the waiting list only if it is the csv file that we need by using &#39;endswith()&#39;. Then use &#39;requests&#39; to scrape filee, and add a downloading percentage bar by using tqdm. Since all scv files are compressed as gz file, we also need to import gzip to decompress the file one by one by script.</p>
+                            <p>In total, the whole dataset contains <strong>15 different columns</strong> and <strong>71645420 records</strong>.</p>
+                            <p>Since it is too large to upload (13.3 GB), we choose to provide a download link for the whole data set.</p>
+                            <h3 id="222-data-sample">2.2.2 Data Sample and Definition</h3>
+                            <figure>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Column Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>callsign</td>
+                                            <td>the identifier of the flight displayed on ATC screens (usually the first three letters are reserved for an airline: AFR for Air France, DLH for Lufthansa, etc.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>number</td>
+                                            <td>the commercial number of the flight, when available (the matching with the callsign comes from public open API)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>icao24</td>
+                                            <td>the transponder unique identification number;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>registration</td>
+                                            <td>the aircraft tail number (when available);</td>
+                                        </tr>
+                                        <tr>
+                                            <td>typecode</td>
+                                            <td>the aircraft model type (when available);</td>
+                                        </tr>
+                                        <tr>
+                                            <td>origin</td>
+                                            <td>a four letter code for the origin airport of the flight (when available);</td>
+                                        </tr>
+                                        <tr>
+                                            <td>destination</td>
+                                            <td>a four letter code for the destination airport of the flight (when available);</td>
+                                        </tr>
+                                        <tr>
+                                            <td>firstseen</td>
+                                            <td>the UTC timestamp of the first message received by the OpenSky Network;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>lastseen</td>
+                                            <td>the UTC timestamp of the last message received by the OpenSky Network;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>day</td>
+                                            <td>the UTC day of the last message received by the OpenSky Network.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </figure>
+                            <p>Please click <a class="primary-link" href="sample_opensky.html">here</a> to view some data sample of this dataset.</p>
+                            <h3 id="223-data-issues">2.2.3 Data Issues</h3>
+                            <ul>
+                                <li>There is no noise value in this dataset, only missing value</li>
+                                <li>Missing value for Fields <strong>origin</strong> and <strong>destination</strong> Origin and destination airports are computed online based on the ADS-B trajectories on approach/takeoff: no crosschecking with external sources of data has been conducted. These two fields are empty when no airport could be found</li>
+                                <li>Missing value for Fields <strong>typecode</strong> and <strong>registration</strong> Aircraft information come from the OpenSky aircraft database. Fields are empty when the aircraft is not present in the database.</li>
+                                <li>Missing value for Fields <strong>number</strong> The commercial number of the flight, are empty when unavailable</li>
+                            </ul>
+                            <h3 id="224-data-cleanliness">2.2.4 Data Cleanliness</h3>
+                            <ul>
+                                <li>The evaluation of the cleaniness is (valid records that we need/ all records that we need), as long as there is a missing value in the record, this record is invalid.</li>
+                                <li>Cleaniness of Sample(First 4000 records of each file) =&gt; 91.8156%</li>
+                                <li>Cleaniness of whole Dataset(the whole dataset is too big to upload - 13.3GB) =&gt; 98.1030%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section section-lg bg-default" id="Twitter">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-xl-12">
+                            <h2 id="23-scraped-tweets-related-to-covid-and-flight">2.3 Scraped Tweets related to &#39;Covid&#39; and &#39;flight&#39;</h2>
+                            <h3 id="231-overview">2.3.1 Overview</h3>
+                            <p>This is a dataset of tweets that is scraped from twitter. We scraped for more than 20 hours to get over 450K tweets in English that contains keywords <code>covid</code> and <code>flight</code> since <code>01-01-2019</code> (It&#39;s an early date but we just want to make sure the data is fully covered. Interesting fact is that the earliest tweet that contains those two words is on <code>02-19-2019</code>, unrelated to covid-19 though).</p>
+                            <p>There are a lot of columns such as datetime, user_id, username, name, tweet, language, mentions, urls, photos, replies_count, retweets_count, likes_count, hashtags, cashtags, link, retweet, quote_url, video, thumbnail, near, geo, etc.</p>
+                            <h3 id="232-data-sample-and-definition">2.3.2 Data Sample and Definition</h3>
+                            <figure>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Column Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>id</td>
+                                            <td>id of this original tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>conversation_id</td>
+                                            <td>id of the conversation that includes this tweet(if applied). Otherwise appears the id of this original tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>created_at</td>
+                                            <td>the date and time when this tweet is created (with time zone)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>date</td>
+                                            <td>the date when this tweet is created</td>
+                                        </tr>
+                                        <tr>
+                                            <td>time</td>
+                                            <td>the time when this tweet is created</td>
+                                        </tr>
+                                        <tr>
+                                            <td>timezone</td>
+                                            <td>the timezone of date and time above</td>
+                                        </tr>
+                                        <tr>
+                                            <td>user_id</td>
+                                            <td>id of the user who creates this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>username</td>
+                                            <td>username of the user who creates this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>name</td>
+                                            <td>the nickname of user who creates this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>tweet</td>
+                                            <td>the plain text of tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>language</td>
+                                            <td>the language this tweet uses</td>
+                                        </tr>
+                                        <tr>
+                                            <td>mentions</td>
+                                            <td>twitter users that are mentioned in this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>urls</td>
+                                            <td>the urls that appears in this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>photos</td>
+                                            <td>the photos that appears in this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>replies_count</td>
+                                            <td>the number of replies to this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>retweets_count</td>
+                                            <td>the number of retweets of this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>likes_count</td>
+                                            <td>the number of likes of this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>hashtags</td>
+                                            <td>the hashtags that appears in this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>link</td>
+                                            <td>the original link to this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>video</td>
+                                            <td>the number of videos that appear in this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>thumbnail</td>
+                                            <td>the thumbnail of user that creates this tweet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>reply_to</td>
+                                            <td>the people and their id that this tweet replies to(if applied)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </figure>
+                            <p>Please click <a class="primary-link" href="sample_twitter.html">here</a> to view some data sample of this dataset.</p>
+                            <h3 id="233-data-issues">2.3.3 Data Issues</h3>
+                            <ul>
+                                <li>
+                                    <p>Missing values in many fields.</p>
+                                    <ul>
+                                        <li>For example, &#39;username&#39;, &#39;mentions&#39;, &#39;retweets&#39;. However, we mainly focus on the tweet column because that is where text data exists.</li>
+                                    </ul>
+                                </li>
+                                <li><p>Noise value in &#39;tweet&#39; colunmn. For example, there are lots of emojis and punctuation which are useless for following analysis.</p></li>
+                            </ul>
+                            <h3 id="234-data-cleanliness">2.3.4 Data Cleanliness</h3>
+                            <p>cleaningText.py: # cleaning text</p>
+                            <ul>
+                                <li>using regular expression to filter all the emojis and punctuation</li>
+                                <li>using stopwords to filter all the useless words</li>
+                            </ul>
+                            <pre>
+<code>the percentage of valid content: 19.478%
+the percentage of useful words: 78.476%
+</code>
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="section footer-classic section-sm">
+                <div class="container">
+                    <div class="row row-30">
+                        <div class="col-lg-4 wow fadeInLeft">
+                            <p class="footer-classic-title">COSC - 587</p>
+                            <p class="footer-classic-subscribe-form">Group: Segentation Fault</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">group memebers</p>
+                            <ul>
+                                <li>Rui Chen: <a class="d-inline-block accent-link" href="mailto:rc1488@georgetown.edu">rc1488@georgetown.edu</a></li>
+                                <li>Yutai Li: <a class="d-inline-block accent-link" href="mailto:yl1381@georgetown.edu">yl1381@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-sm-8 wow fadeInRight">
+                            <p class="footer-classic-title">&nbsp;</p>
+                            <ul>
+                                <li>Yuming Wang: <a class="d-inline-block accent-link" href="mailto:yw850@georgetown.edu">yw850@georgetown.edu</a></li>
+                                <li>Boning Zhang: <a class="d-inline-block accent-link" href="mailto:bz176@georgetown.edu">bz176@georgetown.edu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container wow fadeInUp" data-wow-delay=".4s">
+                    <div class="footer-classic-aside">
+                        <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved. Design by <a href="https://coreja.com">Rui Chen</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="snackbars" id="form-output-global"></div>
+        <script src="js/core.min.js"></script>
+        <script src="js/script.js"></script>
+        <!--coded by Drel-->
+    </body>
+</html>
